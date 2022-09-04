@@ -30,3 +30,8 @@ save = function () {
     const content = editor.getValue()
     localStorage.setItem('code', content)
 }
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    save()
+});
